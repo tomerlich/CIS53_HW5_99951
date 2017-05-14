@@ -1,5 +1,6 @@
 package edu.deanza.cis53_hw5_99951;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v4.app.Fragment;
@@ -10,7 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -28,6 +31,8 @@ import java.util.Date;
 import java.util.List;
 
 import java.net.*;
+
+import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -72,6 +77,12 @@ public class MainActivityFragment extends Fragment {
                         getActivity().getApplicationContext(),
                         mForecastAdapter.getItem(position),
                         Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(
+                        getActivity().getApplicationContext(),
+                        DetailActivity.class);
+                String message = mForecastAdapter.getItem(position).toString();
+                intent.putExtra(EXTRA_MESSAGE, message);
+                startActivity(intent);
             }
         });
 
