@@ -32,12 +32,12 @@ import java.util.List;
 
 import java.net.*;
 
-import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 /**
  * A placeholder fragment containing a simple view.
  */
 public class MainActivityFragment extends Fragment {
+    public static final String EXTRA_MESSAGE = "edu.deanza.cis53_hw5_99951";
     public static ArrayAdapter<String> mForecastAdapter;
 
     public MainActivityFragment() {
@@ -80,7 +80,8 @@ public class MainActivityFragment extends Fragment {
                 Intent intent = new Intent(
                         getActivity().getApplicationContext(),
                         DetailActivity.class);
-                String message = mForecastAdapter.getItem(position).toString();
+                String message = mForecastAdapter.getItem(position);
+
                 intent.putExtra(EXTRA_MESSAGE, message);
                 startActivity(intent);
             }
