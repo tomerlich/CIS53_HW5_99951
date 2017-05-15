@@ -91,6 +91,7 @@ public class MainActivityFragment extends Fragment {
         return rootView;
     }
 
+
     public static class FetchWeatherTask extends AsyncTask<String, Void, String[]>{
 
         @Override
