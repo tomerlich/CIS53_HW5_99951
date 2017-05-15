@@ -3,6 +3,7 @@ package edu.deanza.cis53_hw5_99951;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
@@ -90,7 +91,6 @@ public class MainActivityFragment extends Fragment {
         Log.d(MainActivity.APP_TAG, "onCreateView");
         return rootView;
     }
-
 
     public static class FetchWeatherTask extends AsyncTask<String, Void, String[]>{
 
