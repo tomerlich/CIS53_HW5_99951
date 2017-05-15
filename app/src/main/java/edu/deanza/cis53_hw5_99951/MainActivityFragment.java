@@ -47,7 +47,7 @@ public class MainActivityFragment extends Fragment {
 
     @Override
     public View onCreateView(final LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+                             final Bundle savedInstanceState) {
         String[] data ={
                 "Monday 6/23 - Sunny",
                 "Tuesday 6/24 - Foggy",
