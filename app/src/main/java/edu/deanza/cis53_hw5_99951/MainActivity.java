@@ -1,5 +1,7 @@
 package edu.deanza.cis53_hw5_99951;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -55,6 +57,18 @@ public class MainActivity extends AppCompatActivity {
             new MainActivityFragment.FetchWeatherTask().execute("San%20Jose,US", "7");
             Log.d(APP_TAG, "onOptionsItemSelected Refresh");
             return true;
+        }else if (id == R.id.action_show_map){
+            // Create a Uri from an intent string. Use the result to create an Intent.
+            Uri gmmIntentUri = Uri.parse(
+                    "geo:37.7749,-122.4194?q=" + Uri.encode("San Jose"));
+
+            // Create an Intent from gmmIntentUri. Set the action to ACTION_VIEW
+            Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+            // Make the Intent explicit by setting the Google Maps package
+            mapIntent.setPackage("com.google.android.apps.maps");
+
+            // Attempt to start an activity that can handle the Intent
+            startActivity(mapIntent);
         }
 
         return super.onOptionsItemSelected(item);
