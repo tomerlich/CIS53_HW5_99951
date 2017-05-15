@@ -3,6 +3,7 @@ package edu.deanza.cis53_hw5_99951;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -90,6 +91,16 @@ public class MainActivityFragment extends Fragment {
 
         Log.d(MainActivity.APP_TAG, "onCreateView");
         return rootView;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
     }
 
     public static class FetchWeatherTask extends AsyncTask<String, Void, String[]>{
