@@ -1,5 +1,6 @@
 package edu.deanza.cis53_hw5_99951;
 
+import android.app.IntentService;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -18,6 +19,7 @@ import android.widget.TextView;
 public class DetailActivity extends AppCompatActivity {
 
     private ShareActionProvider mShareActionProvider;
+    public Intent intent, sendIntent;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -25,7 +27,7 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
 
         // Get the Intent that started this activity and extract the string
-        Intent intent = getIntent();
+        intent = getIntent();
         String message = intent.getStringExtra(MainActivityFragment.EXTRA_MESSAGE);
 
         // Capture the layout's TextView and set the string as its text
@@ -56,6 +58,13 @@ public class DetailActivity extends AppCompatActivity {
 
         if(id == R.id.menu_item_share){
             Log.d(MainActivity.APP_TAG, "onOptionsItemSelected Share");
+            sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_SEND);
+            sendIntent.putExtra(
+                    Intent.EXTRA_TEXT,
+                    intent.getStringExtra(MainActivityFragment.EXTRA_MESSAGE));
+            sendIntent.setType("text/plain");
+            startActivity(sendIntent);
         }
         return super.onOptionsItemSelected(item);
     }
