@@ -82,6 +82,7 @@ public class MainActivityFragment extends Fragment {
                 String message = mForecastAdapter.getItem(position);
 
                 intent.putExtra(EXTRA_MESSAGE, message);
+                Log.d(MainActivity.APP_TAG, "Leaving main activity");
                 startActivity(intent);
             }
         });
