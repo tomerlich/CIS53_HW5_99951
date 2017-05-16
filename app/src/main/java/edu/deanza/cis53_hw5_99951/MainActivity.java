@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         }else if (id == R.id.action_show_map){
             // Create a Uri from an intent string. Use the result to create an Intent.
             Uri gmmIntentUri = Uri.parse(
-                    "geo:37.7749,-122.4194?q=" + Uri.encode("San Jose"));
+                    "geo:0, 0?q=" + Uri.encode("San Jose, CA"));
 
             // Create an Intent from gmmIntentUri. Set the action to ACTION_VIEW
             Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
