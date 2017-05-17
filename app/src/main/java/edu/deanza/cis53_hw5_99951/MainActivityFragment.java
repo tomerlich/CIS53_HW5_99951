@@ -91,16 +91,6 @@ public class MainActivityFragment extends Fragment {
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-    }
-
-    @Override
     public void onPause() {
         super.onPause();
         Log.d(MainActivity.APP_TAG, "onPause");
