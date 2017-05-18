@@ -86,8 +86,24 @@ public class MainActivityFragment extends Fragment {
             }
         });
 
-        Log.d(MainActivity.APP_TAG, "onCreateView MainActivityFragment");
+        Log.d(MainActivity.APP_TAG, "onCreateView");
         return rootView;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        Log.d(MainActivity.APP_TAG, "onPause");
     }
 
     public static class FetchWeatherTask extends AsyncTask<String, Void, String[]>{
