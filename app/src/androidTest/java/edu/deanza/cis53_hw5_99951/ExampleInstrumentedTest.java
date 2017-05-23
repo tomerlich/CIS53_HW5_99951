@@ -88,7 +88,7 @@ public class ExampleInstrumentedTest {
 
         // A cursor is your primary interface to the query results
         Cursor weatherCursor = db.query(
-                WeatherContract.LocationEntry.TABLE_NAME, // Table to Query
+                WeatherContract.WeatherEntry.TABLE_NAME, // Table to Query
                 null,   // all columns
                 null,   // columns for the "where" clause
                 null,   // Values for the "where" clause
