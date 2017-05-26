@@ -14,7 +14,6 @@ import org.junit.runner.RunWith;
 import java.util.Map;
 import java.util.Set;
 
-import edu.deanza.cis53_hw5_99951.data.WeatherContract;
 import edu.deanza.cis53_hw5_99951.data.WeatherContract.*;
 import edu.deanza.cis53_hw5_99951.data.WeatherDbHelper;
 
@@ -100,7 +99,7 @@ public class ExampleInstrumentedTest {
         ContentValues testValues = createNorthPoleLocationValues();
 
         long locationRowId;
-        locationRowId = db.insert(WeatherContract.LocationEntry.TABLE_NAME, null, testValues);
+        locationRowId = db.insert(LocationEntry.TABLE_NAME, null, testValues);
 
         //Verify we got a row back
         assertTrue(locationRowId != -1);
